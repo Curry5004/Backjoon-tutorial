@@ -1,63 +1,65 @@
 package beginner_2_1.NM200;
 
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
 public class Main {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws IOException{
 		
-		Main me = new Main();
-		
-		Scanner scan = new Scanner(System.in);
+		BufferedReader scan = new BufferedReader(new InputStreamReader(System.in));
+
 		
 		List<Integer> result = new ArrayList<>();
 		int count = 0;
-		int totalCount = scan.nextInt();
+		int totalCount = Integer.parseInt(scan.readLine());
 		
-		Scanner scan2 = new Scanner(System.in);
 		while(count<totalCount) {
-			String req = scan2.nextLine();
-			String[] dum = me.vali(req);
+			String req = scan.readLine();
+			String[] dum = req.split(" ");
+			int endNum = result.size()-1;
+			int result2 = 0;
+			
 			switch(dum[0]) {
 				case "push":
 					int num = Integer.parseInt(dum[1]);
 					result.add(num);
-					break;
+					count++;
+					continue;
 				case "pop":
 					if(result.size()==0) {
-						System.out.println(-1);
+						result2 = -1;
 					} else {
-						System.out.println(result.get(0));
-						result.remove(0);
+						result2 = result.get(endNum);
+						result.remove(endNum);
 					}
 					break;
 				case "size":
-					System.out.println(result.size());
+					result2 = endNum+1;
 					break;
 				case "empty":
-					int valiNum = result.size();
-					if(valiNum==0) {
-						System.out.println(0);
+					if(endNum+1==0) {
+						result2 = 1;
 					} else {
-						System.out.println(1);
+						result2 = 0;
 					}
 					break;
 				case "top":
-					if(result.size()==0) {
-						System.out.println(-1);
+					if(endNum+1==0) {
+						result2 = -1;
 					} else {
-						System.out.println(result.get(0));
+						result2 = result.get(endNum);
 					}
 					break;
 			}
+			System.out.println(result2);
 			count++;
 		}
 	}
-	String[] vali(String val) {
-		String[] result = val.split(" ");
-		return result;
-	};
 }
-
