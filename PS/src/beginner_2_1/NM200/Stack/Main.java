@@ -1,4 +1,4 @@
-package beginner_2_1.NM200;
+package beginner_2_1.NM200.Stack;
 
 
 import java.io.BufferedReader;

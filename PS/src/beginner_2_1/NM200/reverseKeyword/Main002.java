@@ -1,4 +1,4 @@
-package beginner_2_1.NM200;
+package beginner_2_1.NM200.reverseKeyword;
 
 /*
  * 문제
@@ -56,7 +56,6 @@ public class Main002 {
 			/*빵야*/
 			System.out.println(ans4);
 			
-			System.out.println("잔디 왜 안심어질까?");
 		}
 	}
 }
