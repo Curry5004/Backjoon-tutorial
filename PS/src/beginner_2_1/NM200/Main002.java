@@ -55,6 +55,8 @@ public class Main002 {
 			}
 			/*빵야*/
 			System.out.println(ans4);
+			
+			System.out.println("잔디 왜 안심어질까?");
 		}
 	}
 }
