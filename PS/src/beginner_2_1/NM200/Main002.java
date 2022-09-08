@@ -20,9 +20,41 @@ public class Main002 {
 		
 		int totalCount = Integer.parseInt(scan.readLine());
 		
+		/*
+		 * String 받아서 매열로 던져준다
+		 * **/
 		for(int i = 0; i <totalCount; i++) {
 			String input = scan.readLine();
+			String[] input2 = input.split(" ");
+			int inputSize = input2.length;
+			String[] ans1 = new String[inputSize];
+			int ans1Size = ans1.length;
 			
+			/*
+			 * 단어 뒤집어주기
+			 * */
+			for(int x=0; x<inputSize; x++) {
+				char[] ans2 = input2[x].toCharArray();
+				int ans2Size = ans2.length;
+				String ans3 = "";
+				for(int y=0; y<ans2Size; y++) {
+					ans3 = ans3 + ans2[ans2Size-1-y];
+				}
+				ans1[x] = ans3;
+			}
+			/*
+			 * 배열 합쳐주기
+			 * */
+			String ans4 = "";
+			/*
+			 * 첫글자는 하드코딩으로 넣어준다.
+			 * */
+			ans4 = ans4 + ans1[0];
+			for(int l=1; l<ans1Size; l++) {
+				ans4 = ans4 + " " +ans1[l]; 
+			}
+			/*빵야*/
+			System.out.println(ans4);
 		}
 	}
 }
