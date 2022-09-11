@@ -42,7 +42,7 @@ public class Main {
 	public static String vali1(List<Character> arr) {
 		
 		/*
-		 * 길이 홀짝 Vali
+		 * 1) 길이 홀짝 Vali
 		 * 길이가 짝이면 절대로 VPS가 나올 수 없다.
 		 * Why? () 짝을 맞출 수 없기 떄문
 		 * */
@@ -51,19 +51,38 @@ public class Main {
 			return "NO";
 		}
 		
+		/*
+		 * 2) 짝 개수 Vali
+		 * VPS에서 (와 )의 갯수가 동일해야지만 VPS가 성립된다.
+		 * 해당 갯수를 비교한다면 검증 로직까지 가지 않고도 종결 시킬 수 있다.
+		 * */
+		
+		int resA=0;
+		int resB=0;
+				
+		for(char a : arr) {
+			if(a=='(') {
+				resA++;
+			} else {
+				resB++;
+			}
+		}
+		//숫자가 안맞음 = VPS가 될 수 없음
+		if(resA!=resB) {
+			return "NO";
+		}
 		
 		/*
-		 * 반복 여부 조회
+		 * 3) 반복 여부 조회
 		 * */
 		boolean onOff = true;
 		
 		while(onOff) {
 			/*
 			 * VPS 제거 로직을 탔는가?
-			 * 탔다는 뜻은 List에 값이 
+			 * 탔다는 것은 제거할 로직이 없다는 뜻
 			 * */
-			int onOff2 = 0;
-			boolean onOff3 = true;
+			boolean onOff2 = true;
 			/*
 			 * List 길이 조회
 			 * */
@@ -81,7 +100,7 @@ public class Main {
 						/*
 						 * 탔으면 숫자 올려줌
 						 * */
-						onOff2++;
+						onOff2 = false;
 					}
 				}
 			} catch(IndexOutOfBoundsException e){
@@ -91,11 +110,10 @@ public class Main {
 
 			/*
 			 * 종료 Validation
-			 * 1) VPS 제거로직을 안탔어야 하고
-			 * 2) 걸리는게 1개도 없어야한다.
+			 * 1) VPS 제거로직을 안탔어야 한다.
 			 * */
 			
-			if(onOff2==0) {
+			if(onOff2) {
 				onOff = false;
 			}
 		}
