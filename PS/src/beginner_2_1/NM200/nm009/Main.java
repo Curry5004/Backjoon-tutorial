@@ -4,6 +4,8 @@ package beginner_2_1.NM200.nm009;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.HashMap;
+import java.util.Map;
 
 
 /*
@@ -12,20 +14,26 @@ import java.io.InputStreamReader;
  *  * */
 
 public class Main {
-   public static void main(String[] args) throws NumberFormatException, IOException {
-      BufferedReader scan = new BufferedReader(new InputStreamReader(System.in));
+	public static void main(String[] args) throws NumberFormatException, IOException {
+		BufferedReader scan = new BufferedReader(new InputStreamReader(System.in));
       
-      String req = scan.readLine();
-      String[] dum = req.split(" ");
-      int oneNum = Integer.parseInt(dum[0]);
-      int twoNum = Integer.parseInt(dum[1]);
-      int threNum = Integer.parseInt(dum[2]);
+		String req = scan.readLine();
+		String[] dum = req.split(" ");
+		int a = Integer.parseInt(dum[0]);
+		int b = Integer.parseInt(dum[1]);
       
       
-      System.out.println((oneNum+twoNum)%threNum);
-      System.out.println((oneNum%threNum+twoNum%threNum)%threNum);
-      System.out.println((oneNum*twoNum)%threNum);
-      System.out.println(((oneNum%threNum)*(twoNum%threNum))%threNum);
-   }
+		Map<Integer, Integer> aMap = new HashMap<>();
+		Map<Integer, Integer> bMap = new HashMap<>();
+      
+      
+		}
 
+   
+	public static Map<Integer, Integer> div(int a){
+		
+		
+		return null;
+	   
+	}
 }
