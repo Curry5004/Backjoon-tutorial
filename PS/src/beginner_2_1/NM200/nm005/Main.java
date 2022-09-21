@@ -23,14 +23,14 @@ public class Main {
 		 * */
 		String text = scan.readLine();
 		/*
-		 * List가 아니라 Stack 구조로 
+		 * ArrayList에서 LinkedList로 변경
 		 * */
 		List<Character> result = new LinkedList<>();
 		for(int i=0; i<text.length(); i++) {
 			result.add(text.charAt(i));
 		}
 		/*
-		 * 커서는 숫자 오른쪽에 있다고 생각하자...!
+		 * 커서는 숫자 오른쪽에 있다고 생각하자.
 		 * */
 		int pointer = result.size();
 		
@@ -70,7 +70,9 @@ public class Main {
 					pointer++;
 					break;
 				case 'B':
-					/**/
+					/*
+					 * Vali : 현재 포인터가 맨 앞보다 앞에있는가?
+					 * */
 					if(0==pointer) {
 						break;
 					}
@@ -78,6 +80,9 @@ public class Main {
 					pointer--;
 					break;
 				case 'P':
+					/*
+					 * 말 그대로 값 추가
+					 * */
 					result.add(pointer,input[2]);
 					pointer++;
 					break;

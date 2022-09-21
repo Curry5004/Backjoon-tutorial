@@ -10,7 +10,7 @@ import java.util.Stack;
 
 
 /*
- * 문제
+ * 모범답안
  * URL : https://www.acmicpc.net/problem/1406
  *  * */
 
