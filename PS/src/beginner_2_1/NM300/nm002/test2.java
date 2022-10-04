@@ -1,4 +1,4 @@
-package beginner_2_1.NM200.nm009;
+package beginner_2_1.NM300.nm002;
 
 public class test2 {
 

@@ -1,4 +1,4 @@
-package beginner_2_1.NM200.nm009;
+package beginner_2_1.NM300.nm002;
 
 
 import java.io.BufferedReader;
@@ -15,9 +15,15 @@ import java.util.Map;
 /*
  * 문제
  * URL : https://www.acmicpc.net/problem/2609
+ *  * 9997 9997
+ * 9993 9993
+ * 9998 9998
+ * 9994 9994
+ * 
+ * 1)1차 시도. Math를 for문으로 바꿔본다
  *  * */
 
-public class Main {
+public class Main6 {
    public static void main(String[] args) throws NumberFormatException, IOException {
       BufferedReader scan = new BufferedReader(new InputStreamReader(System.in));
       
