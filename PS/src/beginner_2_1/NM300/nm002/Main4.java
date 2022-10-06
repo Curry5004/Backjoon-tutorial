@@ -5,6 +5,8 @@ import java.io.InputStreamReader;
 
 /*
  * 답안 코드 리팩토링
+ * 
+ * 재귀 함수를 확용하여 문제 풀이
  * */
 
 
