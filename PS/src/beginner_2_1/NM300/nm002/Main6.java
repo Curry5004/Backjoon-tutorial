@@ -13,16 +13,19 @@ import java.util.Map;
 /*
  * 문제
  * URL : https://www.acmicpc.net/problem/2609
- *  * 
+ *  
+ *  
+ *  반례 9997 9997, 9993 9993
  * 
- * 반례 
- * 9997 9997
- * 9993 9993
- * 9998 9998
- * 9994 9994
+ * 1)Math를 for문으로 바꿔본다
+ * -> 안됀다! 9993 9993으로 예시를 진행하였을 때 최대 공약수 부분에서 (52라인) 부분 부터 3331을 검증하지 못한다.
  * 
- * Math를 for문으로 바꿔본다
- * 안됀다!!! 9993 9993으로 예시를 진행하였을 때 최대 공약수 부분에서 (52라인) 부분 부터 3331을 검증하지 못한다.
+ * 2)애러 분석
+ * 발생 지점 : 최대 공약수를 구하는 로직
+ * 문제점 : getKey를 사용하여 값을 받아왔을 떄 분명 같은 수임에도 불구하고 서로 같지 않다고 판정하여 넘어간다
+ * 예상 : 이는 key의 타입이 Integer이다 key의 숫자가 아니라 hashCode로 값을 서로 비교하여 거짓인 경우가 나오는 것으로 보인다.
+ * 해결 방안 : Integer인 key를 int 타입으로 변환한 뒤 key의 숫자값을 비교할 수 있게 만들어준다
+ * 결과 : 해결
  * 
  *  * */
 
@@ -54,7 +57,10 @@ public class Main6 {
 			// 공약수 가져오기
 			for (Map.Entry<Integer, Integer> i : aMap.entrySet()) {
 				for (Map.Entry<Integer, Integer> x : bMap.entrySet()) {
-					if (i.getKey() == x.getKey()) {
+					//Integer를 int로 변환하여 hashCode가 아니라 숫자로 값을 비교하게 만듬
+					int numA = i.getKey();
+					int numB = x.getKey();
+					if (numA == numB) {
 						que.add(i.getKey());
 					}
 				}
