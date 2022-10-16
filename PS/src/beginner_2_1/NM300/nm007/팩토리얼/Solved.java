@@ -1,4 +1,4 @@
-package beginner_2_1.NM300.nm007.factorial;
+package beginner_2_1.NM300.nm007.팩토리얼;
 
 import java.io.BufferedReader;
 import java.io.IOException;

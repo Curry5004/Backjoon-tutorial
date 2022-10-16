@@ -1,4 +1,4 @@
-package beginner_2_1.NM300.nm006.goldbach;
+package beginner_2_1.NM300.nm006.골드바흐의_추측;
 
 import java.io.BufferedReader;
 import java.io.IOException;

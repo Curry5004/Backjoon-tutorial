@@ -1,4 +1,4 @@
-package beginner_2_1.NM300.nm008.factorialCount0;
+package beginner_2_1.NM300.nm008.팩토리얼_0의_개수;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -44,6 +44,7 @@ public class Refactoring {
 		}
 		
 		System.out.println(cnt);
+
 		
 	}
 }
