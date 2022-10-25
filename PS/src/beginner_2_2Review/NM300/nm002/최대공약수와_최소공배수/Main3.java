@@ -1,4 +1,4 @@
-package beginner_2_1.NM300.nm002;
+package beginner_2_2Review.NM300.nm002.최대공약수와_최소공배수;
 
 
 import java.io.BufferedReader;
