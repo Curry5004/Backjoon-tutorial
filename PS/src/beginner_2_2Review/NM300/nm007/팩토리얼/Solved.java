@@ -38,13 +38,18 @@ public class Solved {
 		
 		// 2. 로직
 		int multi = 1;					//정답 변수 선정
-			
+		System.out.printf("===============%d! 연산=============== \n",num);	
 		//for문을 통하여 연산 진행
 		for(int i=1; i<=num; i++) {
+			if(i!=num) {
+				System.out.printf("%d * ",i);
+			}else {
+				System.out.printf("%d",i);
+			}
 			//팩토리얼로 곱하여준다.
 			multi = multi * i;
 		}
-		System.out.println(multi);
+		System.out.printf("\n답은 %d",multi);	
 		
 	}
 }

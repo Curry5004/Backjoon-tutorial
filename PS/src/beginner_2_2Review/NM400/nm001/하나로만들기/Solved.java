@@ -48,21 +48,29 @@ public class Solved {
 		
 		//입력부에서 받은 값 만큼 전개한다.
 		for(int i=4; i<=num; i++) {
-			
+			System.out.printf("===============f(%d)로직 진입===============\n", i);
 			
 			//1이상의 모든 수는 n-1의 경우를 가지고 있다.
 			int result = dp[i-1];
+			int result2 =0;						//%2==0일 때 출력용 변수. 나눠지지 않는다면 0, 나눠진다면 dp[i/2] 값을 출력한다.
+			int result3 =0;						//%3==0일 때 출력용 변수. 나눠지지 않는다면 0, 나눠진다면 dp[i/3] 값을 출력한다.
+			
 			
 			if(i%2==0) {
+				result2 = dp[i/2]; 
 				result = result>dp[i/2] ? dp[i/2] : result;
 			}
 
 			if(i%3==0) {
+				result3 = dp[i/3];
 				result = result>dp[i/3] ? dp[i/3] : result;
 			}
 			
+			System.out.printf("f(%s) : f(%s) : f(%s) = %d : %d : %d (결과값이 0이면 2 || 3로 나누었을 떄 나누어 떨어지지 않는다.) \n", i+"-"+1, i+"/"+2, i+"/"+3, dp[i-1], result2, result3);
+			
 			//dp에서 값을 가져오고 1씩 더해준다.
 			dp[i] = result+1;
+			System.out.printf("f(%d) = %d \n", i, dp[i]);
 		}
 		
 		System.out.println(dp[num]);

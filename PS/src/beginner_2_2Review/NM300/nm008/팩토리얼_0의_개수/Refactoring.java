@@ -42,7 +42,7 @@ public class Refactoring {
 				element = element/5;
 			}
 		}
-		
+		System.out.println("P!값에서 뒷자리의 0의 갯수는 1 * 2 * 3 * 4 * ..... * P 에서 모든 수들이 약수 중 5의 갯수와 같다");
 		System.out.println(cnt);
 
 		

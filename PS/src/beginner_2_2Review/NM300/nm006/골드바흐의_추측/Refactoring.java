@@ -62,6 +62,21 @@ public class Refactoring {
 			}
 		}
 		
+		System.out.printf("입력 받은 최대값 : %d. 2~%d 까지의 소수는 다음과 같다.\n", maxNum, maxNum);
+		
+		int line = 1;				//출력 시 줄 나눠주는 변수
+		for(int i = 2; i<=maxNum; i++) {
+			if(!sie[i]) {
+				if(line%5==0) {
+					
+					System.out.printf("%d \n", i);
+				} else {
+					System.out.printf("%d ", i);
+				}
+				line++;
+			}
+		}
+		System.out.println();
 		
 		//sta의 값을 poll 하면서 시작
 		//마지막 숫자는 0이므로 0만 남을때 까지 진행한다.
